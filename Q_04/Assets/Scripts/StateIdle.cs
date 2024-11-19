@@ -6,6 +6,7 @@ public class StateIdle : PlayerState
 {
     public StateIdle(PlayerController controller) : base(controller) { }
 
+
     public override void Init()
     {
         ThisType = StateType.Idle;
