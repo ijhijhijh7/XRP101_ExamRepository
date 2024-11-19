@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class TurretController : MonoBehaviour
 {
@@ -12,16 +13,29 @@ public class TurretController : MonoBehaviour
     private Coroutine _coroutine;
     private WaitForSeconds _wait;
 
+
     private void Awake()
     {
         Init();
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        Debug.Log("충돌");
+        if (other.CompareTag("Player") && _coroutine == null)
         {
             Fire(other.transform);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log("충돌해제");
+        if (other.CompareTag("Player"))
+        {
+            StopCoroutine(_coroutine);
+            _coroutine = null;
         }
     }
 
