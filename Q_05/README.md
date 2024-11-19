@@ -19,3 +19,4 @@
 
 ## 답안
 - EventSystem 추가를 통해 start버튼으로 씬전환이 이뤄지도록 수정
+- DeactivateRoutine() 코루틴이 동작하지 않는 것을 확인 시간 관계상 수정 구현을 못함
