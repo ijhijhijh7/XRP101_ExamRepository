@@ -13,3 +13,4 @@
 
 ## 답안
 - SetCubePosition이 Awake에서 호출될 때 _cubeController가 초기화 되지 않았다
+- SetPoint를 위치 값 설정하는데 사용하지 않았다
