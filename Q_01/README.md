@@ -12,4 +12,4 @@
 제시된 소스코드에서 문제가 발생하는 `원인을 모두 서술`하시오.
 
 ## 답안
-- 
+- SetCubePosition이 Awake에서 호출될 때 _cubeController가 초기화 되지 않았다
