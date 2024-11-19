@@ -9,7 +9,7 @@ public class BulletController : PooledBehaviour
     [SerializeField] private float _deactivateTime;
     [SerializeField] private int _damageValue;
 
-    private Rigidbody _rigidbody;
+    [SerializeField] private Rigidbody _rigidbody;
     private WaitForSeconds _wait;
     
     private void Awake()
@@ -26,9 +26,19 @@ public class BulletController : PooledBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other
+            /*other
                 .GetComponent<PlayerController>()
-                .TakeHit(_damageValue);
+                .TakeHit(_damageValue);*/
+            PlayerController playerController = other.transform.root.GetComponent<PlayerController>();
+
+            if (playerController != null)
+            {
+                playerController.TakeHit(_damageValue);
+            }
+            else
+            {
+                Debug.LogWarning("충돌한 객체에 PlayerController가 없습니다.");
+            }
         }
     }
 
