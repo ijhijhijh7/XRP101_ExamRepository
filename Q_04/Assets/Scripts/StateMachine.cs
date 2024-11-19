@@ -37,6 +37,11 @@ public class StateMachine
 
     public void ChangeState(StateType state)
     {
+        if (CurrentType == state)
+        {
+            return;
+        }
+
         CurrentState.Exit();
         CurrentType = state;
         CurrentState.Enter();
