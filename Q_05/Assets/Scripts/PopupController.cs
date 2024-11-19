@@ -31,7 +31,7 @@ public class PopupController : MonoBehaviour
     private void Activate()
     {
         _popup.gameObject.SetActive(true);
-        GameManager.Intance.Pause();
+        GameManager.Instance.Pause();
         StartCoroutine(DeactivateRoutine());
     }
 
@@ -43,6 +43,7 @@ public class PopupController : MonoBehaviour
     private IEnumerator DeactivateRoutine()
     {
         yield return _wait;
+        Debug.Log("팝업 시간 지남");
         Deactivate();
     }
 }

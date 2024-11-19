@@ -20,6 +20,7 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     public void LoadScene(int buildIndex)
     {
+        Debug.Log($"Test {buildIndex}");
         SceneManager.LoadScene(buildIndex);
     }
 }
