@@ -27,8 +27,10 @@ public class PlayerMovement : MonoBehaviour
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.z = Input.GetAxisRaw("Vertical");
 
-        if (direction == Vector3.zero) return;
-        
-        transform.Translate(_status.MoveSpeed * Time.deltaTime * direction);
+        if (direction != Vector3.zero)
+        {
+            direction.Normalize();
+            transform.Translate(_status.MoveSpeed * Time.deltaTime * direction);
+        }
     }
 }
